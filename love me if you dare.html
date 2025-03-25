@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Me If You Dare</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4CAF50, #f87c01);
+            color: #c50a4f;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            width: 100%;
+            top: -60px; /* Initially hidden */
+            z-index: 1000;
+            transition: top 0.8s ease-in-out;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f87c01;
+        }
+
+        header {
+            background: linear-gradient(to right, #4CAF50, #f87c01);
+            padding: 20px;
+            color: rgb(236, 60, 60);
+            text-align: center;
+            margin-top: 60px; /* Ensure header doesn't overlap with the fixed nav */
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 1s ease-in, transform 1s ease-in;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-in, transform 1s ease-in;
+        }
+
+        .game-image {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .game-image:hover {
+            transform: scale(1.1);
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav id="navbar">
+    <a href="index.html">Home</a>
+    <a href="game.html">Games We Have</a>
+    <a href="trailer.html">Trailer</a>
+    <a href="About Us.html">About Us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<header id="header">
+    <h1>Love Me If You Dare</h1>
+</header>
+
+<div class="content" id="content">
+    <img src="horror.jpg" alt="Love Me If You Dare" class="game-image">
+    <div class="description">
+        <p><strong>Love Me If You Dare</strong> COMING SOON!</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Gangadhari Gaming World. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Navbar slide-in effect
+    window.onload = function() {
+        document.getElementById("navbar").style.top = "0";
+
+        // Fade-in effect for header and content
+        setTimeout(() => {
+            document.getElementById("header").style.opacity = "1";
+            document.getElementById("header").style.transform = "translateY(0)";
+        }, 500);
+
+        setTimeout(() => {
+            document.getElementById("content").style.opacity = "1";
+            document.getElementById("content").style.transform = "translateY(0)";
+        }, 1000);
+    };
+</script>
+
+</body>
+</html>
